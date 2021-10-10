@@ -55,6 +55,9 @@ for root, dirs, files in os.walk("../../TheOutputsCodeforces/processed/atomic_pe
         print(problem)
         with open(os.path.join(root, name), 'r') as f:
             j = json.load(f)
+            if not j.get("metrics", None):
+                continue
+
         new_entry = []
         for feature in features:
             if feature == "label":

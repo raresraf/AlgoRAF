@@ -1,8 +1,15 @@
 import json
 import os
+import sys
 import csv
 
-label_name = "graph"
+
+if len(sys.argv) <= 1:
+    print("Usage: python3 to_csv_one_label.py <label_name>")
+    print("sample usage: python3 to_csv_one_label.py math")
+    sys.exit(-1)
+
+label_name = sys.argv[1]
 
 features = [
     "branch-misses_FEATURE_CONFIG",
@@ -56,6 +63,9 @@ for root, dirs, files in os.walk("../../TheOutputsCodeforces/processed/atomic_pe
         problem = os.path.join(root, name).split("/")[-2]
         with open(os.path.join(root, name), 'r') as f:
             j = json.load(f)
+            if not j.get("metrics", None):
+                continue
+
         new_entry = []
         for feature in features:
             if feature == "label":
