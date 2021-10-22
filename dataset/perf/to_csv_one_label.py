@@ -53,10 +53,10 @@ features = [
 
 dataset = []
 
-with open("../../rafPipeline/dataset_metadata/labels/labels.json") as f:
+with open("../../../rafPipeline/dataset_metadata/labels/labels.json") as f:
     labels = json.load(f)
 
-for root, dirs, files in os.walk("../../TheOutputsCodeforces/processed/atomic_perf/results_code/"):
+for root, dirs, files in os.walk("../../../TheOutputsCodeforces/processed/atomic_perf/results_code/"):
     for name in files:
         if name != "PROCESSED.RAF":
             continue
