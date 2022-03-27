@@ -39,10 +39,23 @@ features = [
     "task-clock_FEATURE_TYPE",
     "task-clock_INTERCEPT",
     "task-clock_R-VAL",
-    "label",
+
+    "label_strings",
+    "label_implementation",
+    "label_greedy",
+    "label_brute_force",
+    "label_dp",
+    "label_divide_and_conquer",
+    "label_graphs",
+    "label_binary_search",
+    "label_math",
+    "label_sortings",
+    "label_shortest_paths",
 ]
 
+# 'constructive algorithms', 'strings', 'dp & greedy', 'implementation', 'greedy', 'brute force', 'geometry', 'dp', 'shortest paths', 'divide and conquer', 'graphs', 'number theory', 'two pointers', 'binary search', 'math', 'graph matchings', 'sortings', '*special problem'
 dataset = []
+labels_set = set()
 
 with open("../../../rafPipeline/dataset_metadata/labels/labels.json") as f:
     labels = json.load(f)
@@ -60,11 +73,18 @@ for root, dirs, files in os.walk("../../../TheOutputsCodeforces/processed/atomic
 
         new_entry = []
         for feature in features:
-            if feature == "label":
-                new_entry.append(labels[problem.split("_", 1)[0]])
+            if "label" in feature:
+                label = feature.split("_", 1)[1].replace("_", " ")
+                if label in labels[problem.split("_", 1)[0]]:
+                    new_entry.append(1)
+                    print(label, 1)
+                else:
+                    new_entry.append(0)                    
+                    print(label, 0)
             else:
                 new_entry.append(j["metrics"][feature.split("_", 1)[0]][feature.split("_", 1)[1]])
         dataset.append(new_entry)
+
 
 with open('dataset.csv', 'w') as f:
     write = csv.writer(f)
