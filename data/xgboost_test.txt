@@ -1,0 +1,18 @@
+                    precision    recall  f1-score   support
+
+           strings       0.94      0.90      0.92       756
+    implementation       0.94      0.98      0.96      1387
+            greedy       0.92      0.77      0.84       523
+       brute force       0.98      0.77      0.86       311
+                dp       0.87      0.74      0.80        35
+divide and conquer       1.00      0.68      0.81        31
+            graphs       0.91      0.88      0.90        83
+     binary search       1.00      0.68      0.81        31
+              math       0.97      0.91      0.94       301
+          sortings       0.95      0.61      0.74       176
+    shortest paths       0.91      0.88      0.90        83
+
+         micro avg       0.94      0.88      0.91      3717
+         macro avg       0.94      0.80      0.86      3717
+      weighted avg       0.94      0.88      0.91      3717
+       samples avg       0.94      0.91      0.91      3717
