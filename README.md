@@ -1,6 +1,9 @@
 # AlgoML
 A deep neural network to help in classifying algorithms.
 
+Part of M.Sc Thesis @ CS
+- Full Material: [here](docs/RaresFolea_M_Sc_doc.pdf)
+- Presentation: [here](docs/RaresFolea_M_Sc_pres.pdf)
 
 ## Relevant repo suite:
 - [AlgoRAF](https://github.com/raresraf/AlgoRAF)
