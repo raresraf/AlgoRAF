@@ -1,5 +1,5 @@
 # AlgoML
-A deep neural network to help in classifying algorithms.
+An amalgam of ML techniques (tree-based, networks, etc) to help in classifying algorithms.
 
 Part of M.Sc Thesis @ CS
 - Full Material: [here](docs/RaresFolea_M_Sc_doc.pdf)
